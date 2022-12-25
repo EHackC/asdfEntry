@@ -23,6 +23,8 @@
 
 void gotoxy(short x,short y); //콘솔 커서 이동시키는 함수
 void setcolor(short c,short b); //콘솔 색 변경하는 함수
-void setcursor(short size,short visible); //콘솔 커서 모양 변경
+void cursorHide(); //콘솔 커서 숨기기
+void cursorShow(); //콘솔 커서 보이기
+void setCurSize(short size); //콘솔 커서 사이즈 변경
 
 #endif

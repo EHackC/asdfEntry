@@ -12,10 +12,23 @@ void setcolor(short text,short background){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),col);
 }
 
-//콘솔 커서 모양 변경
-void setcursor(short size,short visible){
+//콘솔 커서 숨기기
+void cursorHide(){
+    CONSOLE_CURSOR_INFO cursor={0,};
+    cursor.bVisible=FALSE;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&cursor);
+}
+
+//콘솔 커서 보이기
+void cursorShow(){
+    CONSOLE_CURSOR_INFO cursor={0,};
+    cursor.bVisible=TRUE;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&cursor);
+}
+
+//콘솔 커서 사이즈 변경
+void setCurSize(short size){
     CONSOLE_CURSOR_INFO cursor={0,};
     cursor.dwSize=size;
-    cursor.bVisible=visible;
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&cursor);
 }
