@@ -1,7 +1,7 @@
 #include "screen.h"
 #include "console.h"
 
-//화면에 그리는 함수
+//화면 그리는 함수
 void Screen::printScreen(int width,int height){
     int screenSize=min(scrollY+height,static_cast<int>(content.size())); //출력할 길이 얻기
     for(int i=scrollY;i<screenSize;i++){
