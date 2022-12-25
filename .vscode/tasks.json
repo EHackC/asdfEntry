@@ -9,7 +9,7 @@
             "command": "g++",
             "args": [
                 "-g",
-                "${fileDirname}\\**.cpp",
+                "src\\**.cpp",
                 "-o",
                 "bin\\${fileBasenameNoExtension}.exe"
             ],
