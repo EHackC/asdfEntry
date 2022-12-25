@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "g++ build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${fileDirname}\\**.cpp",
+                "-o",
+                "bin\\${fileBasenameNoExtension}.exe"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build"
+        },
+        {
+            "label": "execute",
+            "type": "shell",
+            "group": "test",
+            "command": "start",
+            "args": [
+                "powershell.exe",
+                "'-ExecutionPolicy ByPass -NoExit -command \"bin\\${fileBasenameNoExtension}.exe;echo `0;pause;exit\"'"
+            ]
+        }
+    ]
+}
