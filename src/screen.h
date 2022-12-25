@@ -15,7 +15,6 @@ protected:
     int left; //화면 x좌표
     int top; //화면 y좌표
     int cursorPos; //화면 커서 위치(터미널 커서와는 별개임)
-    //TODO: 아래있는거 string을 구조체로 변경
     vector<string> content; //내용물
 public:
     void key(stack<Screen> *screenStack,char key); //입력 받는 함수
